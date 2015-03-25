@@ -1,0 +1,12 @@
+<h1>Pokemon</h1>
+<% if user_signed_in? %>
+  
+<%= button_to "Catch", catches_path, :method => :get %>
+<%= button_to "Battle", battles_path, :method => :get %>
+<%= button_to "Trade", new_trade_path, :method => :get %>
+<%= button_to "Heal", heals_path, :method => :get %>
+
+  <p><%= link_to "Logout", destroy_user_session_path, :method => :delete %></p>
+<% else %>
+  <p><%= link_to "Login", new_user_session_path %></p>
+<% end %>

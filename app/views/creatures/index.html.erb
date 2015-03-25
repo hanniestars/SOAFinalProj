@@ -1,0 +1,24 @@
+<h3>Creatures</h3>
+  <%= link_to "New Creature", new_creature_path %>
+
+
+
+<table class="table1" width="100%">
+  <tr>
+    <th><center>Name</center></th>
+    <th><center>Element Type</center></th>
+    <th><center>Description</center></th>
+  </tr>
+  <% @creatures.each do |creature| %>
+    <tr>
+      <td><center><%= creature.name %></center></td>
+      <td><center><%= creature.element_type %></center></td>      
+      <td><center><%= creature.description %></center></td>
+
+      <td><center>
+        <%= link_to "Edit", edit_creature_path(creature.id) %>
+        <%= link_to "Destroy", creature_path(creature.id), :method => :delete, :data => { :confirm => "Are you sure?" } %>
+      </center></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,54 @@
+<h3>New Creature Location</h3>
+
+<div align="left">
+<table class="table1" width="40%" display="inline">
+  <tr>
+    <th><center>ID</center></th>
+    <th><center>Name</center></th>
+    <th><center>Element Type</center></th>
+    <th><center>Description</center></th>
+  </tr>
+  <% @creatures.each do |creature| %>
+    <tr>
+	<td><center><%= creature.id %></center></td>
+      <td><center><%= creature.name %></center></td>
+      <td><center><%= creature.element_type %></center></td>      
+      <td><center><%= creature.description %></center></td>
+    </tr>
+ <% end %>
+</table>
+</div>
+<div align="right" display="inline">
+<table class="table1" width="40%" >
+<tr>
+    <th><center>ID</center></th>
+    <th><center>Name</center></th>
+    <th><center>Coordinate </center></th>
+  </tr>
+<% @locations.each do |location| %>
+    <tr>
+      <td><center><%= location.id %></center></td>
+      <td><center><%= location.name %></center></td>
+      <td><center><%= location.gps_coordinate %></center></td>      
+    </tr>
+
+  <% end %>
+
+</table>
+</div>
+
+
+<div>
+<%= simple_form_for(@creature_location) do |f| %>
+
+
+  <%= f.input :creature_id, as: :select, :collection => @creatures,:label_method => :name,:value_method => :id,:label => "Creatures" %> 
+  <hr>
+
+  <%= f.input :location_id, as: :select, :collection => @locations,:label_method => :name,:value_method => :id,:label => "Locations" %> 
+
+  <hr>
+  <%= f.submit "Create Record" %>
+<% end %>
+</div>
+

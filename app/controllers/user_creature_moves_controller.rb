@@ -1,0 +1,2 @@
+class UserCreatureMovesController < ApplicationController
+end

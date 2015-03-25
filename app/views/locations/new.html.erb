@@ -1,0 +1,13 @@
+<h3>New Locations</h3>
+
+
+<%= simple_form_for(@location) do |f| %>
+  
+  <%= f.input :name %>
+  <%= f.input :gps_coordinate %>
+
+  <hr>
+  <%= f.submit "Create Record" %>
+<% end %>
+
+<%= link_to "Back to creatures", locations_path %>

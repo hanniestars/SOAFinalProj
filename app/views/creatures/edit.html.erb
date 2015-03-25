@@ -1,0 +1,14 @@
+<h3>Edit Creature</h3>
+
+For <i>creature</i>
+
+<%= simple_form_for(@creature) do |f| %>
+  
+  <%= f.input :name %>
+  <%= f.input :element_type %>
+  <%= f.input :description %>
+  <hr>
+  <%= f.submit "Update Record" %>
+<% end %>
+
+<%= link_to "Back to creatures", creatures_path %>

@@ -1,0 +1,4 @@
+class AddMobileNumberToUsers < ActiveRecord::Migration
+  def change
+  end
+end

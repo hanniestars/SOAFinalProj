@@ -1,0 +1,24 @@
+<h2>TRADE</h2>
+<br/>
+<table style="width: 100%;">
+  <tr>
+    <th>USER A</th>
+    <th>Creatures</th>
+    <th>USER B</th>
+    <th>Creatures</th>
+  </tr>
+  <% @trades.each do |trade| %>
+    <tr>
+      <td><center><%= trade.user.user_id_a %></center></td>
+      <!-- <td><center><%= trade.user.user_creature.creature_a %></center></td> -->
+      <td><center><%= trade.user.user_id_b %></center></td>
+      <td><center><%= link_to "Delete", destroy_trade_path(trade.id), :method => :delete, :data => { :confirm => "Are you sure?" } %>
+      <%= link_to "Edit", edit_trade_path(trade.id) %>
+      <%= link_to 'Show', trade %></center></td>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<br/>
+<br/>
+<%= link_to "Create a new Trade", new_trade_path %> 

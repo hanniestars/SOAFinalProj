@@ -1,0 +1,21 @@
+<h3>Location</h3>
+  <%= link_to "New Locations", new_location_path %>
+
+
+
+<table class="table1" width="100%">
+  <tr>
+    <th><center>Name</center></th>
+    <th><center>Coordinate</center></th>
+  </tr>
+  <% @locations.each do |location| %>
+    <tr>
+      <td><center><%= location.name %></center></td>
+      <td><center><%= location.gps_coordinate %></center></td>      
+
+      <td><center>
+        <%= link_to "Destroy", location_path(location.id), :method => :delete, :data => { :confirm => "Are you sure?" } %>
+      </center></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,25 @@
+<h3>Creatures Locations</h3>
+  <%= link_to "New Creature Locations", new_creature_location_path %>
+
+<div align="right" display="inline">
+<table class="table1" width="40%" >
+<tr>
+ <th><center>ID</center></th>
+    <th><center>Creature</center></th>
+    <th><center>Location </center></th>
+  </tr>
+<% @creature_locations.each do |creature_location| %>
+    <tr>
+      <td><center><%= creature_location.id %></center></td>
+      <td><center><%= creature_location.creature_id %></center></td>
+      <td><center><%= creature_location.location_id %></center></td>      
+ 
+
+<td><center>
+
+        <%= link_to "Destroy", creature_location_path(creature_location.id), :method => :delete, :data => { :confirm => "Are you sure?" } %>
+      </center></td>
+    </tr>
+ <% end %>
+</table>
+</div>

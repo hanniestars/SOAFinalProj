@@ -1,0 +1,15 @@
+<h1>New Trade</h1>
+
+<%= simple_form_for(@trade) do |f| %>
+  <%= f.association :user %>
+  <%= "Creatures:" %>
+</br>
+  <%= f.association :user %>
+  <%= "Creatures:" %>
+</br>
+</br>
+  <%= f.submit "Trade" %> <%= link_to 'Back to Trades', trades_path %>
+
+
+
+<% end %>

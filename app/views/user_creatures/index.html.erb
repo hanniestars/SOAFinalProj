@@ -1,0 +1,25 @@
+<h3>User Creature</h3>
+
+<div align="right" display="inline">
+<table class="table1" width="100%" >
+<tr>
+ <th><center>ID</center></th>
+    <th><center>User</center></th>
+    <th><center>Creature </center></th>
+<th><center>Nickname </center></th>
+  </tr>
+<% @pets.each do |p| %>
+    <tr>
+      <td><center><%= p.id %></center></td>
+      <td><center><%= p.user_id %></center></td>
+      <td><center><%= p.creature_id %></center></td>
+	<td><center><%= p.nickname%></center></td>          
+ 
+<td><center>
+
+        <%= link_to "Destroy", user_creature_path(p.id), :method => :delete, :data => { :confirm => "Are you sure?" } %>
+      </center></td>
+    </tr>
+ <% end %>
+</table>
+</div>

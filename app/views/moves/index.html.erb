@@ -1,0 +1,24 @@
+<h3>Moves</h3>
+  <%= link_to "New Move", new_move_path %>
+
+
+
+<table class="table1" width="100%">
+  <tr>
+    <th><center>Name</center></th>
+    <th><center>Max Number</center></th>
+    <th><center>Type</center></th>
+  </tr>
+  <% @moves.each do |move| %>
+    <tr>
+      <td><center><%= move.name %></center></td>
+      <td><center><%= move.max_number %></center></td>      
+      <td><center><%= move.type %></center></td>
+
+      <td><center>
+        <%= link_to "Edit", edit_move_path(move.id) %>
+        <%= link_to "Destroy", move_path(move.id), :method => :delete, :data => { :confirm => "Are you sure?" } %>
+      </center></td>
+    </tr>
+  <% end %>
+</table>

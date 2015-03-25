@@ -1,0 +1,13 @@
+<h3>Edit Locations</h3>
+
+For <i>location</i>
+
+<%= simple_form_for(@location) do |f| %>
+  
+  <%= f.input :name %>
+  <%= f.input :gps_coordinate %>
+  <hr>
+  <%= f.submit "Update Record" %>
+<% end %>
+
+<%= link_to "Back to locations", locations_path %>

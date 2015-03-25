@@ -1,0 +1,2 @@
+module UsercreaturemovesHelper
+end

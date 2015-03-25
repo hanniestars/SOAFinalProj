@@ -1,0 +1,2 @@
+class HealsController < ApplicationController
+end

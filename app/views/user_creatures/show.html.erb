@@ -1,0 +1,18 @@
+
+<strong>Creature</strong>: <br>
+<table width="50%">
+  <tr>
+    <th>ID</th>
+	<th> Name </th>	
+  </tr>
+    <tr>
+     <td><%= @creature.id %></td>
+     <td><%= @creature.name %></td>
+    </tr>
+ </table>
+<%= form_tag( user_creature_path(@creature.id), method: "post" ) do %>
+  <%= label_tag(:name, "Enter name for creature:") %>
+  <%= text_field_tag(:name) %>
+  <%= submit_tag("Catch!") %>
+
+<% end %>
